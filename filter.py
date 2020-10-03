@@ -45,5 +45,6 @@ filter_taps = np.array([
   0.007670476360046427
 ])
 
+
 def filter_lowpass(signal):
   return scipy_convolve(signal, filter_taps, mode='same', method='direct')

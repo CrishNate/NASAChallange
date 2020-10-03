@@ -14,7 +14,7 @@ from keras import backend as K
 
 import netCDF4  as nc
 
-fn = 'C:/Users/someonelse/Downloads/dataset-cems-fire-historical-37ed8d86-5a3b-4817-9d06-db8d0494adde/ECMWF_FWI_DANGER_RISK_20200101_1200_hr_v3.1_con.nc'
+fn = 'ua_data.nc'
 ds = nc.Dataset(fn)
 
 

@@ -3,6 +3,8 @@ from scipy import signal
 from astropy.convolution import convolve
 from scipy.signal import convolve as scipy_convolve
 
+import matplotlib.pyplot as plt
+
 FILTER_TAP_NUM = 37
 
 filter_taps = np.array([
@@ -45,6 +47,17 @@ filter_taps = np.array([
   0.007670476360046427
 ])
 
+signal = []
+for i in range(0, 100):
+  if i % 10 < 4:
+    signal.append(1)
+  else:
+    signal.append(np.random.random() * 0.1)
 
 def filter_lowpass(signal):
   return scipy_convolve(signal, filter_taps, mode='same', method='direct')
+
+r = filter_lowpass(signal)
+plt.plot(signal, 'r')
+plt.plot(r, 'b')
+plt.show()
